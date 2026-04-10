@@ -16,6 +16,7 @@ app.get("/", (req, res) => {
     res.send("API is running...");
 });
 
+
 connectDB();
 
 app.listen(5001, () => {
