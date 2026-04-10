@@ -15,6 +15,16 @@ const productSchema = new mongoose.Schema({
     },
     catogary: {
         type: String
+    },
+    image: {
+        type: String
+    },
+    stock:{
+        type: Number,
+        default: 0,
     }
-
+},{
+    timestamps: true
 });
+
+export default mongoose.model('Product', productSchema);
