@@ -1,9 +1,16 @@
-import React from 'react'
+import { useEffect, useState } from "react";
+import api from "../api/axios";
+import { Link } from "react-router-dom";
 
-const Home = () => {
-  return (
-    <div className='bg-gray-200 text-3xl font-bold text-red-700 p-2'>Welcome to Home Page</div>
-  )
+export default function Home() {
+  const [products, setProducts] = useState([]);
+  const [search, setSearch] = useState("");
+  const [category, setCategory] = useState("");
+
+  const loadProducts = async () => {
+    const response = await api.get(
+      "/products?search=${search}&category=${category}",
+    );
+    setProducts(response.data);
+  };
 }
-
-export default Home
