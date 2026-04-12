@@ -81,7 +81,7 @@ export default function Home() {
 
             {/* Price + Add to Cart (same line) */}
             <div className="mt-2 flex items-center justify-between">
-              <p className="text-gray-700 font-semibold">${product.price}</p>
+              <p className="text-gray-700 font-semibold">₹{product.price}</p>
 
               <button
                 onClick={() => addToCart(product._id)}
