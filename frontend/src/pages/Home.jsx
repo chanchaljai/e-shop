@@ -9,7 +9,7 @@ export default function Home() {
 
   const loadProducts = async () => {
     const res = await api.get(
-      `/products?search=${search}&category=${category}`
+      `/products?search=${search}&category=${category}`,
     );
     setProducts(res.data);
   };
@@ -29,7 +29,7 @@ export default function Home() {
 
     const total = res.data.cart.items.reduce(
       (sum, item) => sum + item.productId.price * item.quantity,
-      0
+      0,
     );
 
     localStorage.setItem("cartCount", total);
@@ -57,9 +57,9 @@ export default function Home() {
                focus:outline-none focus:ring-2 focus:ring-blue-500"
         >
           <option value="">All Categories</option>
-          <option value="Laptops">Laptops</option>
-          <option value="Mobiles">Mobiles</option>
-          <option value="Tablets">Tablets</option>
+          <option value="laptop">Laptops</option>
+          <option value="mobile">Mobiles</option>
+          <option value="tablet">Tablets</option>
         </select>
       </div>
 
