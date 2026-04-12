@@ -3,10 +3,13 @@ import product from "../models/product.js";
 // Create a new product
 export const createProduct = async (req, res) => {
     try {
+                console.log("BODY:", req.body);
+
         const Product = await product.create(req.body);
         res.json({
             message: "Product created successfully",
             Product,
+            
         })
     } catch (error) {
         res.status(500).json({ message: error.message });
